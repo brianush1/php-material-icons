@@ -1,0 +1,31 @@
+<?php return function(
+	$size = "1em",
+	$color = "currentColor",
+	$width = null,
+	$height = null,
+	$viewBox = "0 0 24 24",
+	$className = null,
+	$ariaLabel = null,
+	$ariaHidden = null,
+	$title = null,
+	$desc = null,
+) { ?>
+	<svg <?php
+		$attribs = "";
+		$attribs .= " viewBox=\"$viewBox\"";
+		$attribs .= " width=\"" . ($width === null ? $size : $width) . "\"";
+		$attribs .= " height=\"" . ($height === null ? $size : $height) . "\"";
+		if ($className !== null) $attribs .= " class=\"$className\"";
+		if ($ariaLabel !== null) $attribs .= " aria-label=\"$ariaLabel\"";
+		if ($ariaHidden !== null) $attribs .= " aria-hidden=\"$ariaHidden\"";
+		echo $attribs;
+	?>><?php
+		if ($desc !== null) {
+			echo "<desc>" . $desc . "</desc>";
+		}
+	?><?php
+		if ($title !== null) {
+			echo "<title>" . $title . "</title>";
+		}
+	?><path d="M15.9 1C12.1 1.1 9 4.2 9 8C9 11.9 12.1 15 16 15S23 11.9 23 8 19.9 1 15.9 1C16 1 15.9 1 15.9 1M16 3C18.8 3 21 5.2 21 8S18.8 13 16 13 11 10.8 11 8 13.2 3 16 3M15 4V9L18.6 11.2L19.4 10L16.5 8.3V4H15M4.6 12.8C6 15.6 8.4 18 11.2 19.4L13.4 17.2C13.7 16.9 14.1 16.8 14.4 17C15.5 17.4 16.7 17.6 18 17.6C18.5 17.6 19 18.1 19 18.6V22C19 22.5 18.5 23 18 23C8.6 23 1 15.4 1 6C1 5.4 1.5 5 2 5H5.5C6.1 5 6.5 5.4 6.5 6C6.5 7.2 6.7 8.4 7.1 9.6C7.2 10 7.1 10.3 6.9 10.6L4.6 12.8" fill="<?php echo $color; ?>"/></svg>
+<?php } ?>
